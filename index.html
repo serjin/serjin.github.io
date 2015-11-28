@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>1일차 연습 _ techHTML</title>
+        <meta name="viewport" content="initial-scale=1">
+        <meta property="og:title" content="techHTML">
+        <meta property="og:description" content="Korean translation of WEC Technical Reports and Press Release ,infomative Articles.">
+
+        <style>
+            h1 {
+                font-size:20px;
+            }
+            table {
+                margin-top:10px;
+                width:800px;
+                text-align: center;
+                border-top:2px solid #222;
+                border-spacing:0;
+            }
+            tr {
+                border-bottom:1px solid #ccc;
+            }
+            th {
+                padding:10px 0;
+                background: #eee;
+                border-bottom:1px solid #ccc;
+            }
+            td {
+                padding:10px 0;
+                border-bottom:1px solid #ccc;
+            }
+            div {
+                margin-bottom:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>테이블 연습</h1>
+            <table>
+                <colgroup>
+                    <col style="width:6%">
+                    <col style="">
+                    <col style="width:6%">
+                    <col style="width:6%">
+                    <col style="width:6%">
+                    <col style="width:6%">
+                    <col style="width:6%">
+                    <col style="width:6%">
+                    <col style="width:6%">
+                    <col style="width:6%">
+                    <col style="width:6%">
+                    <col style="width:6%">
+                    <col style="width:6%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수</th>
+                        <th>타수</th>
+                        <th>타율</th>
+                        <th>타점</th>
+                        <th>홈런</th>
+                        <th>도루</th>
+                        <th>득점</th>
+                        <th>안타</th>
+                        <th>2루타</th>
+                        <th>3루타</th>
+                        <th>볼넷</th>
+                        <th>삼진</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>홍길동</td>
+                        <td>101</td>
+                        <td>102</td>
+                        <td>103</td>
+                        <td>104</td>
+                        <td>105</td>
+                        <td>106</td>
+                        <td>107</td>
+                        <td>108</td>
+                        <td>109</td>
+                        <td>110</td>
+                        <td>111</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>김길동</td>
+                        <td>201</td>
+                        <td>202</td>
+                        <td>203</td>
+                        <td>204</td>
+                        <td>205</td>
+                        <td>206</td>
+                        <td>207</td>
+                        <td>208</td>
+                        <td>209</td>
+                        <td>210</td>
+                        <td>211</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h1>form 연습</h1>
+            <form>
+                <label for="id">아이디 :</label>
+                <input id="id" name="id" type="text"> <!-- name="id" 값으로 인해 submit을 클릭하면 url에 ?id=serjin 이란 글자가 생김 -->
+
+                <br />
+
+                <label for="pw">비밀번호 :</label>
+                <input id="pw" name="pw" type="password">
+
+                <br />
+
+                <input id="male" name="sex" type="radio" value="male" checked> <!-- name으로 같은 그룹으루 묶을 수 있음 -->
+                <label for="male">남자</label>
+
+                <br />
+
+                <input id="famale" name="sex" value="famale" type="radio"> <!-- value : 넘겨주는 값 -->
+                <label for="famale">여자</label>
+
+                <br />
+
+                <input id="eat" type="checkbox" name="habit" value="eat">
+                <label for="eat">먹기</label>
+
+                <br />
+
+                <input id="sleep" type="checkbox" name="habit" value="sleep">
+                <label for="sleep">먹기</label>
+
+                <br />
+
+                <select name="drink">
+                    <option value="coke">콜라</option>
+                    <option value="fanta">환타</option>
+                    <option value="redbull">레드불</option>
+                </select>
+
+                <br />
+
+                <textarea name="intro"></textarea>
+
+                <br />
+
+                <!-- html5 -->
+                <input type="color">
+
+                <br />
+
+                <input type="date">
+
+                <br />
+
+                <input type="tell"> <!-- 모바일에서 숫자로 지원 -->
+
+                <br />
+
+                <input type="number">
+
+                <br />
+
+                <input type="range">
+                <!-- /html5 -->
+
+                <br />
+
+                <input type="submit" value="전송">
+            </form>
+        </div>
+        <div>
+            <h1>텍스트 연습</h1>
+        </div>
+    </body>
+</html>

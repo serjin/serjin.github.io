@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Youtube</title>
+        <meta name="viewport" content="initial-scale=1">
+        <style>
+             body {margin:0; padding:0; font-size:14px;}
+             header {width:100%; height:50px; border-bottom:1px solid #ccc; position:fixed; background: #fff;}
+             header a, header button {float:left;}
+             /*
+             main {width:80%; float:right; height:500px; background: #bbb;}
+             aside {width:20%; float:right; height:500px; background: #aaa;}
+             footer {width:100px; height:100px; background: #eee;}*/
+             li {float:left; list-style-type:none; }
+            section:after {content:""; display:block; clear:both;}
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1><a href="">Youtube</a></h1>
+            <form action="search.php" method="post">
+                <!-- search 라는 php 폴더로 보내라 -->
+                <!-- get : url에 데이터를 추가해서 보냄. 제출을 누르면 url에 표시. url만 알면 해킹이 쉬움 회원정보등은 절때 사용 안함 / post : 보안에 더 좋음 따른 프로토콜에 테워서 보냄 -->
+                <!-- 두게 차이가 있으므로 확인 필요 포스트는 데이터 제한량이 있음 -->
+                <input name="search" type="text">
+
+                <input type="submit">
+            </form>
+
+            <a href="upload.html">업로드</a> <!-- url 변경되면 a요소, url 변화 없이 동작하면 butten 요소 -->
+            <button type="button">알림</button>
+            <button type="button">조은</button> <!-- 폼요소 안에 없을 경우 보통은 자바스크립트를 위한 것 --> <!-- 버튼이라고 넣어주면 스크린리더가 버튼이라고 정확하게 읽어즘 -->
+        </header>
+        <main>
+            <nav>
+                <a href="#">홈</a>
+                <a href="#">구독하기</a>
+            </nav>
+            <section>
+                <h2><a href="#">홈</a></h2> <!-- 홈 버튼을 로고와 동등한 수준으로 생각하고 있는 경우 -->
+                <!-- 위의 네비게이션이 어떻게 될 지 모르므로 홈을 위 홈을 안보이게 숨겨두고 섹션명을 정확하게 명시해 주는 것이 좋음 => 요거 물어보기 -->
+                <section>
+                    <h2>맞춤 동영상</h2>
+                    <ul>
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>맞춤 동영상</h2>
+                    <dl>
+                        <dt>카테고리</dt>
+                        <dd>추천동영상</dd> <!-- dt 혹은 span을 사용해도 됨 자신이 생각하는 것이 맞춰 진행 필요 -->
+                    </dl>
+                    <ul>
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Crimecele .L</h2>
+                    <span>맞춤 채널</span>a
+                    <ul>
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>맞춤 동영상</h2>
+                    <ul>
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure> <!-- figure 태그를 쓰면 구지 alt를 쓰지 않아도 된다 (예외)-->
+                                <a href=""><img src="https://i.ytimg.com/vi/ooguf6Dci1E/mqdefault.jpg"></a> <!-- 같은 링크지만 영역이 세개면 각각 다른 a태그 -->
+                                <figcaption>
+                                    <strong><a href="">해피투게더 출연 쉐프들의 베스트 10 요리</a></strong>
+                                    <dl>
+                                        <dt>게시자</dt>
+                                        <dd><a href="">HavSomFun TV</a></dd>
+                                        <dt>조회수</dt>
+                                        <dd>109,428회</dd>
+                                        <dt>업로드</dt>
+                                        <dd><time datetime="2015-09-17">2개월 전</time></dd>
+                                        <!-- 복잡하더라도 명료하고 직관적이게 좀 더 좋아지는거라면 복잡한 마크업도 좋다 -->
+                                        <!-- 내가 하는 식으로 div로 짤 수 있지만 위 내용이 더 명확하기 때문에 위 내용이 더 좋다, 물론 정답은 없다 -->
+                                    </dl><!-- 업로드 같은 없는 텍스트 찾는것도 중요 (시각 장애인을 위한 내용) -->
+                                    <!-- 마우스 올리면 나오는 텍스트는 title, alt때 나오는 건 익스 예전버전 -->
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </section>
+                <button type="button">로딩하기</button>
+            </section>
+        </main>
+        <aside>
+            <section>
+                <h2>마이메뉴</h2>
+                <ul>
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">내 채널</a></li>
+                    <li>
+                        <a href="#">
+                            인기 급상승 동영상
+                            <dl>
+                                <dt>확인하지 않은 동영상 갯수</dt>
+                                <dd>97</dd>
+                            </dl><!-- 97 만 두면 무슨 뜻인지 알기 힘듬. 정확히 알려주는 것이 좋음 -->
+                        </a>
+                    </li>
+                    <li><a href="#">구독정보</a></li>
+                    <li><a href="#">최근 볼 동영상</a></li>
+                    <li>
+                        <a href="#">
+                            나중에 볼 동영상
+                            <dl>
+                                <dt>확인하지 않은 동영상 갯수</dt>
+                                <dd>27</dd>
+                            </dl>
+                        </a>
+                    </li>
+                </ul>
+            </section><!-- 특정한 제목을 가지고 있는 일정 구획 --> <!-- aside 밑에 section 이 안될 수 있는지 같은거 확인 필요 -->
+        </aside>
+        <footer>
+            <section>
+                <h2>footer 설정 메뉴</h2>
+                <section>
+                    <h3><a href="">youtube</a></h3>
+                    <ul>
+                        <li><button type="button">언어: 한국어</button></li>
+                        <li><button type="button">국가: 한국</button></li>
+                        <li><button type="button">제한 모드: 사용 안함</button></li>
+                        <li><a href="">최근 본 동영상</a></li>
+                        <li><a href="">도움말</a></li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <h2>footer 메뉴</h2>
+                <section>
+                    <ul>
+                        <li><a href="">정보</a></li>
+                        <li><a href="">보도자료</a></li>
+                        <li><a href="">저작권</a></li>
+                        <li><a href="">제작자</a></li>
+                        <li><a href="">광고</a></li>
+                        <li><a href="">개발자</a></li>
+                        <li><a href="">+ YouTube</a></li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <h2>footer 약관 메뉴</h2>
+                <section>
+                    <ul>
+                        <li><a href="">이용약관</a></li>
+                        <li><a href="">개인저옵 보호</a></li>
+                        <li><a href="">정책 및 안전</a></li>
+                        <li><a href="">의견 보내기</a></li>
+                        <li><a href="">새로운 기능</a></li>
+                    </ul>
+                    <span>© 2015 YouTube, LLC</span>
+                </section>
+            </section>
+        </footer>
+    </body>
+</html>
