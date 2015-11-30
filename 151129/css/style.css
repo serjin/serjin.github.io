@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+body {margin:0; padding:0; font-size:16px;}
+ul, li, p, section, main, h1, img, dl, dt, dd, div, figure {margin:0; padding:0;}
+ul {list-style-type: none;}
+a {text-decoration:none;}
+
+header {width:100%; height:50px; border-bottom:1px solid #ccc; position:fixed; background: #fff; top:0; padding:25px 20px 0 20px; z-index:300;}
+h1 {font-size:20px; margin-right:100px; float:left;}
+
+nav {float:left; font-size:0.8em;}
+nav ul {margin-top:5px;}
+nav ul li {float:left; margin-right:20px;}
+nav ul li a {color:#aaa;}
+nav ul li a:hover {color:#111; border-bottom:2px solid #111; padding-bottom:28px; fint-weight:bold;}
+nav ul li.on {border-bottom:2px solid #111; padding-bottom:28px; fint-weight:bold;}
+nav ul li.on a {color:#111;}
+
+header div {float:right; padding-right:30px;}
+header div form, header section a {float:left; margin-left:10px;}
+header div input {height:25px;}
+header div label {display:none;}
+header div a {border:1px solid #ccc; padding:7px 10px; color:#222; font-size:0.8em; margin-left:10px; line-height:30px; background:#fff;}
+header div button {border:1px solid green; color:green; padding:0px 10px; font-size:0.8em; margin-left:10px; line-height:30px; background:#fff;}
+
+main {padding-top:75px;}
+.main_bg {background: url("http://cdn-images-1.medium.com/max/2000/1*OlgaspZ00W78xQY-HE9Wsg.png") #020733 no-repeat -200px -300px; width:100%; height:360px; text-align:center; padding-top:40px; color:#fff; }
+.main_bg h2 {font-weight:700; font-size:44px; margin-bottom:10px;}
+.main_bg p {font-weight:100; font-size:18px; margin-bottom:20px;}
+.main_bg strong {font-weight:300; font-size:24px;}
+.main_bg a {font-size:1em; color:hotpink; border:1px solid hotpink; padding:10px; margin-left:10px;}
+.main_bg a.pink {color:#fff; background:hotpink;}
+
+main section.contents {width:auto; float:left; padding-left:50px; position:relative; padding-bottom:50px;}
+main section.contents ul li {position:relative; padding-bottom:30px; margin-bottom:30px; border-bottom:1px solid #ccc; width:650px;}
+main section.contents ul li:after {content:""; display:block; clear:both;}
+
+.post_ren {position:absolute; top:0; width:500px;}
+.post_ren:after {content:""; display:block; clear:both;}
+.post_ren img {float:left; margin-right:10px; width:40px;}
+.post_ren figcaption {float:left;}
+.post_ren dl,time {font-size:0.8em; color:#aaa; }
+.post_ren dt {display:none;}
+.post_ren span {font-size:0.9em; color:#aaa;}
+.post_ren a {font-size:0.9em; color:green;}
+
+.main-text {position:relative; padding-top:35px; margin-bottom:10px;}
+h3 {font-size:1.8em; color:#111;}
+.main-text figure {position:absolute; top:120px;}
+.main-text figure img {width:650px;}
+.main-text figure figcaption {display:none;}
+.main-text p {padding-top:200px; font-size:1.4em; color:#888;}
+
+.more {position:relative; font-size:0.9em; color:#aaa; margin-bottom:20px;  display:block;}
+.like_button {position:relative;}
+.like_button a {font-size:0.9em; color:#aaa;}
+.like_button a .green {color:green;}
+.like_button a:first-child {float:left;}
+.like_button a:last-child {float:right;}
+
+.add_list {width:650px; text-align:center;}
+.add_list a {border:1px solid #ccc; padding:10px 20px; color:#222; font-size:0.8em; line-height:30px;}
+
+
+main aside {width:400px; float:right; background:#eee; padding:30px 0;}
+aside h2 {font-size:0.9em; color:#111; border-top:1px solid #222; padding-top:20px; display:inline-block; margin-top:-1px; margin-bottom:20px;}
+.aside_box {border-top:1px solid #ccc; position:relative; margin:0 30px 40px 30px;}
+.tegs_more {position:absolute; top:20px; right:0; font-size:0.8em; color:#ccc;}
+aside ul.tag_list li a {border:1px solid #ccc; padding:8px 10px; color:#222; font-size:0.8em; margin:0 10px 10px 0;  background:#fff; float:left;}
+aside ul.tag_list:after {content:""; display:block; clear:both;}
+
+aside div {background:url("https://cdn-images-1.medium.com/max/2000/1*OlgaspZ00W78xQY-HE9Wsg.png") #020733 -1300px -200px no-repeat; height:180px; padding:50px 30px; margin-bottom:40px;}
+aside div p {font-size: 1.5em; color:#fff; font-weight:200; margin-bottom:30px;}
+aside div a {font-size:0.8em; color:#fff; padding:10px 20px; background:green;}
+
+ol {margin-top:0;}
+ol li {width:100%; padding:20px 0; border-bottom:1px solid #ccc;}
+ol li:last-child {border-bottom:0px; padding-bottom:0;}
+ol li dt a {font-size:0.9em; color:#111;}
+ol li dd a {font-size:0.9em; color:#aaa;}
+
+footer {margin:0 30px; border-top:1px solid #ccc; padding-top:20px;}
+footer a {font-size:0.8em; color:#ccc; float:left; margin-right:10px;}
